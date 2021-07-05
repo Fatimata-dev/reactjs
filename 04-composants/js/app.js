@@ -13,7 +13,28 @@ function ProductName(props) {
     console.log(props.nom);
     return (<p>Produit: {props.nom}</p>)
 }
-
+function Personne(props) {
+    return (
+        
+        <p>
+            { props.children }
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ea maxime debitis, facere quos, veritatis voluptatem laudantium cumque temporibus soluta aspernatur officiis possimus. Officia dolorum enim explicabo, perspiciatis aliquam deleniti!
+        </p>
+    );
+}
+class PersonneName extends React.Component {
+    constructor(props){
+    //on appelle le constructeur de la classe mere 
+    super(props);
+    }
+    render(){
+        return (
+            <di>
+                <p>Nom: {this.props.nom}</p>
+            </di>
+        )
+    }
+}
 // Une classe composant en js extends = heriter
 class App extends React.Component {
     // constructor() {
@@ -26,6 +47,14 @@ class App extends React.Component {
                 <Product/>
                 <ProductName nom="banane"/>
                 <ProductName nom="Fraise"/>
+                <Personne>
+                    <label htmlFor="age">Votre age</label>
+                    <input type="text" id="age"/>
+                    <br/>
+                    <a href="#">Plus d'info</a>
+                    <br/>
+                </Personne>
+                <PersonneName  nom="Drame"/>
             </div>
         )
     }
