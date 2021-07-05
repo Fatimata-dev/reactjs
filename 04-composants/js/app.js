@@ -1,66 +1,83 @@
-/*
-* 2 types de composants
-*    - les fonctions composants (n'ont pas d'état)
-*    - les classes composants (ont d'état local)
-*/
-// une fonction composant renvoi du JSX
+/**
+ * <Header/>
+ * <Navigation>
+ *      <ul></ul>
+ * </Navigation>
+ * <Product/>
+ */
+
+/**
+ * 2 types de composants
+ *      - Les fonctions composants (n'ont pas d'état)
+ *      - Les classes composants (ont un état local)
+ */
+
+// une fonction composant renvoie du JSX.
 function Product() {
     return <p>Produit</p>
 }
-// on utilise les props pour recuperer les attribut sur la balise
-// le paramettre props est un objet qui contient toutes le valeurs
+
+// Les props sont utilisée pour recuperer les attribut sur la balises.
+// Le parametre props est un objet qui contient toutes les valeurs
 function ProductName(props) {
     console.log(props.nom);
-    return (<p>Produit: {props.nom}</p>)
+    // Pour inserer des valeurs dans du JSX on utilise les accolades simples.
+    return <p>Produit: { props.nom }</p>
 }
+
 function Personne(props) {
+    console.log(props.children);
     return (
-        
         <p>
             { props.children }
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ea maxime debitis, facere quos, veritatis voluptatem laudantium cumque temporibus soluta aspernatur officiis possimus. Officia dolorum enim explicabo, perspiciatis aliquam deleniti!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, autem nobis! Commodi vero itaque iusto veniam facilis, excepturi eveniet error, est maxime, tempore dolor numquam porro. Aspernatur nemo nobis nihil!
         </p>
     );
 }
-class PersonneName extends React.Component {
-    constructor(props){
-    //on appelle le constructeur de la classe mere 
-    super(props);
+
+class PersonneName extends React.Component  {
+    // Fait par defaut, par javascript
+    constructor(props) {
+        // Appelle le constructeur de la classe Mere ( Component(props) )
+        super(props);
     }
-    render(){
+
+    render() {
         return (
-            <di>
-                <p>Nom: {this.props.nom}</p>
-            </di>
-        )
+            <div>
+                <p>Nom: { this.props.prenom }</p>
+            </div>
+        );
     }
 }
-// Une classe composant en js extends = heriter
+
+// Une classe composant. En javascript le mot clef extends permet l'héritage
 class App extends React.Component {
-    // constructor() {
+    // constructor(props) {
 
     // }
-    render(){
+    render() {
+        // on peut faire le traitement que l'on veut
         return (
-            // on peut faire le traitement que l'on veut
             <div>
                 <Product/>
-                <ProductName nom="banane"/>
-                <ProductName nom="Fraise"/>
+                <ProductName nom="banane" />
+                <ProductName nom="pomme" />
                 <Personne>
                     <label htmlFor="age">Votre age</label>
-                    <input type="text" id="age"/>
+                    <input type="text" id="age" />
                     <br/>
-                    <a href="#">Plus d'info</a>
+                    <a href="#">plus d'information</a>
                     <br/>
                 </Personne>
-                <PersonneName  nom="Drame"/>
+                <PersonneName prenom="John"/>
             </div>
-        )
+        );
     }
 }
-// //ReactDOM.render(Product, document.getElementById('root'));
-// ReactDOM.render(<Product/>, document.getElementById('root'));
-// ReactDOM.render(<ProductName nom="banane"/>, document.getElementById('root'));
+
+// ReactDOM.render(Product(), document.getElementById('root'));
+// ReactDOM.render(ProductName({nom: 'pomme', message=''}), document.getElementById('root'));
 
 ReactDOM.render(<App/>, document.getElementById('root'));
+ 
