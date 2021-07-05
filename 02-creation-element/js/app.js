@@ -18,3 +18,22 @@ React.createElement('li', {}, "Chameau"),
 React.createElement('li', {id: 'li-1'}, React.createElement('a', {href: '#'}, 'Cheval'))
 );
 ReactDOM.render(lisElement, document.getElementById('root'));
+
+// Avec du jsx
+
+const helloJSX = <h1>Hello World !!!</h1>;
+const lisElementJSX = (
+    <ul>
+        <li>Chat</li>
+        <li id="item">Lapin</li>
+        <li className="li-item"><a href="#">Chameau</a></li>
+    </ul>
+)
+ReactDOM.render(lisElementJSX, document.getElementById('root'));
+
+// const app = (
+//     <div>
+//         <p>...</p>
+//     </div>
+// );
+// ReactDOM....
