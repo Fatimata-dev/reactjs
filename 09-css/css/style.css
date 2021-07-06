@@ -1,0 +1,21 @@
+p {
+    color: bisque;
+    background-color: blueviolet;
+}
+.text{
+    font-size: 20px;
+    color: coral;
+    background-color: wheat;
+}
+.btn {
+    border-radius: 5px;
+    color: white;
+    border: none;
+   
+}
+.btn.danger{
+    background-color: red;
+}
+.btn.success{
+    background-color: green;
+}
