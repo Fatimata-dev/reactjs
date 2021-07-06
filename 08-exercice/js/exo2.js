@@ -31,9 +31,10 @@ function Produit (props){
         )
     
 }
- function createTabElement(contenu,index) { 
-    return( 
-       <Produit id={contenu.id} title={contenu.title}  price={contenu.price} description={contenu.description} key={contenu+index}></Produit>     
+ function createTabElement(produit) { 
+    return(
+//<produit { ...produit }/> 
+       <Produit id={produit.id} title={produit.title}  price={produit.price} description={produit.description} key={produit.id}></Produit>     
      )
 }
  
