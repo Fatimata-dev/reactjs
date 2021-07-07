@@ -13,7 +13,7 @@ function Aliments() {
             (aliments.length < 1) ? <p>La liste est vide</p>:
             <ul>
                 {
-                    aliments.map((aliment , index) => {
+                    this.state.aliments.map((aliment , index) => {
                         return <li key={index+aliment}>{aliment}</li>
                      })
                 }
