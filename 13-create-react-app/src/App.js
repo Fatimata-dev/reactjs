@@ -1,11 +1,13 @@
-
-import Title from "./component/Title";
-import Cycle from "./component/01-cycle-vie/Cycle" 
+import { BrowserRouter } from "react-router-dom";
+import Routes from  "./router/Routes";
+import Navigation from './component/Navigation'
 function App(){
   return(
     <div className="App">
-      <Title/>
-      <Cycle/>
+    <BrowserRouter>
+    <Navigation/>
+    <Routes/>
+    </BrowserRouter>
     </div>
   );
 }
