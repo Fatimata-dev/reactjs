@@ -10,6 +10,7 @@ import Admin from '../component/04-react-router/Admin'
 import Protected from '../component/04-react-router/Protected.route'
 import ReduxCompteur from '../component/04-redux/ReduxCompteur';
 import Hook from '../component/06-hooks/Hooks';
+import Formulaire from '../component/07-formulaire/Form';
 function Routes(props) {
     return (
         // Switch: S'arrete au premier path qui match
@@ -23,6 +24,7 @@ function Routes(props) {
             <Route path="/login" component={Login}/>
             <Protected path="/admin" component={Admin} />
             <Route path="/redux" component={ReduxCompteur} />
+            <Route path="/forms" component={Formulaire} />
             <Route path="/hooks" component={Hook} />
             <Route path="*" component={NotFound}/>
         </Switch>

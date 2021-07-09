@@ -31,6 +31,9 @@ function Navigation(props) {
             <NavLink to="/hooks">
                 Hooks
             </NavLink>
+            <NavLink to="/forms">
+                Formulaire
+            </NavLink>
         </nav>
     );
 }
