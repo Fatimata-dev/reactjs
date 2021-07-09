@@ -1,8 +1,8 @@
 // import { combineReducers } from 'redux';
-import { createStore } from 'react-redux';
+import { createStore } from 'redux';
 
 const etatInitial = {
-    compteur: 0,
+    compteur: 0
 }
 
 /**
@@ -14,15 +14,29 @@ const etatInitial = {
  *   - le type d'action (string)
  * const action = {
  *      type: 'incrementer',
- *      payload: 1
+ *      payload: 2
  * } 
  */
 function countReducer(state=etatInitial, action) {
+    
     switch(action.type) {
         case 'incrementer':
-            break;
+            const nouveauxState = {...state};
+            // toujours copier le state avant modification
+            nouveauxState.compteur++;
+            // nouveauxState.compteur = action.payload
+            console.log(nouveauxState);
+            return nouveauxState;
         case 'decrementer':
-            break;
+            return {
+                ...state,
+                compteur: state.compteur - 1 
+            }
+        case 'incrementerX':
+            return {
+                ...state,
+                compteur: action.payload
+            }
         case 'reset':
             break;
         default:

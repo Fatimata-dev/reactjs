@@ -28,6 +28,9 @@ function Navigation(props) {
             <NavLink to="/admin">
                 Admin
             </NavLink>
+            <NavLink to="/hooks">
+                Hooks
+            </NavLink>
         </nav>
     );
 }

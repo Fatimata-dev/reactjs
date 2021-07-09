@@ -1,13 +1,18 @@
 import { BrowserRouter } from "react-router-dom";
+import {Provider} from 'react-redux';
 import Routes from  "./router/Routes";
-import Navigation from './component/Navigation'
-function App(){
-  return(
+import Navigation from './component/Navigation';
+import store from './store'
+function App() {
+  return (
     <div className="App">
-    <BrowserRouter>
-    <Navigation/>
-    <Routes/>
-    </BrowserRouter>
+        {/* Le store est maintenant accessible partout dans l'application */}
+        <Provider store={store}>
+          <BrowserRouter>
+              <Navigation/>
+              <Routes/>
+          </BrowserRouter>
+        </Provider>
     </div>
   );
 }
